@@ -1,4 +1,4 @@
-package it.englab.courses.kotlin;
+package it.englab.courses.kotlin.data;
 
 public class UserJava {
 
