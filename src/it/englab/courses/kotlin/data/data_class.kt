@@ -9,5 +9,8 @@ fun main(args: Array<String>) {
 
     val clone = user.copy(name = "Francesco", sex = 'M')
     println("New user $clone")
-    
+
+    val (theName, theAge) = clone
+    println("name: $theName")
+    println("age : $theAge")
 }
