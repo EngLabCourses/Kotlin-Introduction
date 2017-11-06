@@ -92,6 +92,20 @@ private fun getLength(value : String?) : Int {
 }
 ```
 
+##Esempio di *Extension functions*
+```kotlin
+package it.englab.courses.kotlin
+
+fun main(args: Array<String>) {
+    val value = "value"
+
+    println("E' uguale a 'value'? ${value.isEqualToValue()} [$value]")
+}
+
+fun String?.isEqualToValue() : Boolean {
+    return this.equals("value")
+}
+```
 
 ## Esempio di estensione classe e override dei metodi (con valori di default) - Differenza con Java
 
