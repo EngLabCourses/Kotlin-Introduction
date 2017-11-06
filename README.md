@@ -62,7 +62,7 @@ Introduzione a Kotlin per EngLab
         val clone = user.copy(name = "Francesco", sex = 'M')
         println("New user $clone")
 
-    //esempio - clone.component1()
+        //esempio - clone.component1()
 
         val (theName, theAge) = clone
         println("name: $theName")
