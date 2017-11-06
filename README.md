@@ -92,7 +92,7 @@ private fun getLength(value : String?) : Int {
 }
 ```
 
-##Esempio di *Extension functions*
+## Esempio di *Extension functions*
 ```kotlin
 package it.englab.courses.kotlin
 
