@@ -18,15 +18,18 @@ Introduzione a Kotlin per EngLab
     }
 ```
     
-## Definizione variabili, *type inference* e *null check*
+## Definizione variabili, *type inference*
 
 ```kotlin
-    val value : String = "world"
-    val anotherValue : String? = null
+package it.englab.courses.kotlin
+
+fun main(args: Array<String>) {
+    val value = true
     println("Hello...$value!")
+}
 ```
 
-## Esempio di *data class* e differenza con JAVA (Mostrare il set di una property e il valore di default come sostituzione del pattern *Builder*)
+## Esempio di *data class*
 
 ```kotlin
     data class User(val name: String, val age: Int, var sex : Char = 'M' )
