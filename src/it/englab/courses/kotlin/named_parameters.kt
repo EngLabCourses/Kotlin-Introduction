@@ -19,4 +19,5 @@ data class Pizza(val tomato: Boolean = false,
                  val mozzarella: Boolean = false,
                  val ham: Boolean = false,
                  val sausage: Boolean = false,
+                 val mushrooms : Boolean = true,
                  val pineapple: Boolean = false)
