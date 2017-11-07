@@ -18,7 +18,7 @@ Introduzione a Kotlin per EngLab
     }
 ```
     
-## Definizione variabili, *type inference*
+## Definizione variabili e *type inference*
 
 ```kotlin
 package it.englab.courses.kotlin
