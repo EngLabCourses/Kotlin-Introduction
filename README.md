@@ -70,7 +70,35 @@ Introduzione a Kotlin per EngLab
     }
 ```
 
+## Esempio di *named e default parameters* (pattern *Builder* in Kotlin)
+
+```kotlin
+package it.englab.courses.kotlin
+
+fun main(args: Array<String>) {
+
+    orderHamburger(cheese = true, bacon = true, bread = true)
+    val myPizzaMargherita = Pizza(mozzarella = true, tomato = true)
+}
+
+fun orderHamburger(ham: Boolean = false,
+                   cheese: Boolean = false,
+                   salad: Boolean = false,
+                   tomato: Boolean = false,
+                   bacon: Boolean = false,
+                   bread: Boolean = false,
+                   ketchup: Boolean = false) {
+}
+
+data class Pizza(val tomato: Boolean = false,
+                 val mozzarella: Boolean = false,
+                 val ham: Boolean = false,
+                 val sausage: Boolean = false,
+                 val pineapple: Boolean = false)
+```
+
 ## Esempio di Null Safety e di `?:` (Elvis Operator)
+
 ```kotlin
 package it.englab.courses.kotlin
 
@@ -93,6 +121,7 @@ private fun getLength(value : String?) : Int {
 ```
 
 ## Esempio di *Extension functions*
+
 ```kotlin
 package it.englab.courses.kotlin
 
@@ -106,9 +135,3 @@ fun String?.isEqualToValue() : Boolean {
     return this.equals("value")
 }
 ```
-
-## Esempio di estensione classe e override dei metodi (con valori di default) - Differenza con Java
-
-
-
-
