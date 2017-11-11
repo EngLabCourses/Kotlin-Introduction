@@ -4,25 +4,23 @@ Introduzione a Kotlin per EngLab
 ## Hello World!
 
 ```kotlin
-    fun main(args: Array<String>) {
-       println("Hello, world!")
-    }
+fun main(args: Array<String>) {
+   println("Hello, world!")
+}
 ```
 
 ## Hello World evoluto con *String template*
 
 ```kotlin
-    fun main(args: Array<String>) {
-       val scope = "world"
-       println("Hello, $scope!")
-    }
+fun main(args: Array<String>) {
+   val scope = "world"
+   println("Hello, $scope!")
+}
 ```
     
 ## Definizione variabili e *type inference*
 
 ```kotlin
-package it.englab.courses.kotlin
-
 fun main(args: Array<String>) {
     val value = true
     println("Hello...$value!")
@@ -32,52 +30,50 @@ fun main(args: Array<String>) {
 ## Esempio di *data class*
 
 ```kotlin
-    data class User(val name: String, val age: Int, var sex : Char = 'M' )
+data class User(val name: String, val age: Int, var sex : Char = 'M' )
 
-    fun main(args: Array<String>) {
-        val user = User("Francesca", 29)
-        user.sex = 'F'
-        println("User $user")
-    }
+fun main(args: Array<String>) {
+    val user = User("Francesca", 29)
+    user.sex = 'F'
+    println("User $user")
+}
 ```
 
 ## Esempio del metodo `copy()`
 
 ```kotlin
-    fun main(args: Array<String>) {
-        val user = User("Francesca", 27)
-        user.sex = 'F'
-        println("User $user")
+fun main(args: Array<String>) {
+    val user = User("Francesca", 27)
+    user.sex = 'F'
+    println("User $user")
 
-        val clone = user.copy(name = "Francesco", sex = 'M')
-        println("New user $clone")
-    }
+    val clone = user.copy(name = "Francesco", sex = 'M')
+    println("New user $clone")
+}
 ```
 
 ## Uso dei metodi `componentN()`
 
 ```kotlin
-    fun main(args: Array<String>) {
-        val user = User("Francesca", 27)
-        user.sex = 'F'
-        println("User $user")
+fun main(args: Array<String>) {
+    val user = User("Francesca", 27)
+    user.sex = 'F'
+    println("User $user")
 
-        val clone = user.copy(name = "Francesco", sex = 'M')
-        println("New user $clone")
+    val clone = user.copy(name = "Francesco", sex = 'M')
+    println("New user $clone")
 
-        //esempio - clone.component1()
+    //esempio - clone.component1()
 
-        val (theName, theAge) = clone
-        println("name: $theName")
-        println("age : $theAge")
-    }
+    val (theName, theAge) = clone
+    println("name: $theName")
+    println("age : $theAge")
+}
 ```
 
 ## Esempio di *named e default parameters* (pattern *Builder* in Kotlin)
 
 ```kotlin
-package it.englab.courses.kotlin
-
 fun main(args: Array<String>) {
     orderHamburger(cheese = true, bacon = true, bread = true)
     val myPizzaMargherita = Pizza(mozzarella = true, tomato = true)
@@ -105,8 +101,6 @@ data class Pizza(val tomato: Boolean = false,
 ## Esempio di Null Safety e di `?:` (Elvis Operator)
 
 ```kotlin
-package it.englab.courses.kotlin
-
 fun main(args: Array<String>) {
 
     val nullableValue: String? = getStringValue()
@@ -123,8 +117,6 @@ private fun getLength(value : String?) = value?.length ?: 0
 ## Esempio di *Extension functions*
 
 ```kotlin
-package it.englab.courses.kotlin
-
 fun main(args: Array<String>) {
     val value = "value"
 
@@ -139,8 +131,6 @@ fun String?.isEqualToValue() : Boolean {
 ## Esempio di *Smart Cast* e uso del *when*
 
 ```kotlin
-package it.englab.courses.kotlin
-
 fun main(args: Array<String>) {
     exampleSmartCast("Esempio di Smart Cast")
     exampleSmartCast(29)
