@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 
 fun exampleSmartCast(obj: Any) {
     if (obj is String) {
-        println("Value is $obj and lenght is ${obj.length}")
+        println("Value is $obj and length is ${obj.length}")
     } else {
         println("Obj is not a String")
     }
@@ -19,7 +19,7 @@ fun exampleSmartCast(obj: Any) {
 
 fun exampleWithMatching(obj: Any?) {
     when (obj) {
-        is String -> println("Value is $obj and lenght is ${obj.length}")
+        is String -> println("Value is $obj and length is ${obj.length}")
         is Int -> println("Value is $obj")
         else -> println("Obj is not a String")
     }
