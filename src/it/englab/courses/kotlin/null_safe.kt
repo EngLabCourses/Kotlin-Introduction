@@ -8,11 +8,6 @@ fun main(args: Array<String>) {
     println("Elvis operator length ${getLength(nullableValue)}")
 }
 
+private fun getStringValue() : String = "Could be null!"
 
-private fun getStringValue() : String {
-    return "Could be null!"
-}
-
-private fun getLength(value : String?) : Int {
-    return value?.length ?: 0
-}
+private fun getLength(value : String?) = value?.length ?: 0
