@@ -28,6 +28,7 @@ fun main(args: Array<String>) {
 ```
 
 ## Esempio di *class*, *object*, *interface*, *singleton* e *companion objects*
+
 ```kotlin
 class Empty : Any()
 
