@@ -23,12 +23,13 @@ open class DifferentDerived : Base() {
 
 interface Contract {
     fun method1()
-    fun method2()
+    fun method2(){
+        println("method2")
+    }
 }
 
 class ContractImpl : Contract {
     override fun method1() {}
-    override fun method2() {}
 }
 
 class Person constructor(name: String) {
