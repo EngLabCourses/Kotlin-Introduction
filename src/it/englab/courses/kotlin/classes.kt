@@ -48,6 +48,18 @@ object Manager {
     val items: Array<String> = arrayOf("item1", "item2")
 }
 
+enum class ProtocolState {
+    WAITING {
+        override fun signal() = TALKING
+    },
+
+    TALKING {
+        override fun signal() = WAITING
+    };
+
+    abstract fun signal(): ProtocolState
+}
+
 fun main(args: Array<String>) {
     Empty()
     Derived()
@@ -61,4 +73,11 @@ fun main(args: Array<String>) {
 
     Manager.registerItem("item")
     Manager.items
+
+    println("enum name ${ProtocolState.TALKING.name}")
+    println("enum ordinal ${ProtocolState.TALKING.ordinal}")
+
+    val state = ProtocolState.WAITING
+    println("current state -> $state")
+    println("new state     -> ${state.signal()}")
 }
