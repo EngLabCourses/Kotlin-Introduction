@@ -184,7 +184,7 @@ data class Pizza(val tomato: Boolean = false,
 
 ```
 
-## Esempio di Null Safety e di `?:` (Elvis Operator)
+## Esempio di `?.` (*Safe Call Operator*) e di `?:` (*Elvis Operator*)
 
 ```kotlin
 fun main(args: Array<String>) {
