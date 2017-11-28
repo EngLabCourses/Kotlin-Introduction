@@ -1,4 +1,4 @@
-package it.englab.courses.kotlin
+package it.englab.courses.kotlin.builder
 
 fun main(args: Array<String>) {
     orderHamburger(cheese = true, bacon = true, bread = true)
