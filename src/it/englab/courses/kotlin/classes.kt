@@ -2,6 +2,7 @@ package it.englab.courses.kotlin
 
 class Empty : Any()
 
+//In Java sono open di default mentre in Kotlin di default sono final
 open class Base {
     open fun overridableMethod() {}
     fun notOverridableMethod() {}
@@ -43,6 +44,7 @@ class Person constructor(name: String) {
     }
 }
 
+//Equivalente di un Singleton in Java
 object Manager {
     fun registerItem(item: String) {}
     val items: Array<String> = arrayOf("item1", "item2")
