@@ -9,6 +9,8 @@ fun main(args: Array<String>) {
 
     val user = User("Francesco", 29)
     user.isAuthenticated()
+
+    utilityMethod()
 }
 
 fun String?.isEqualToValue() : Boolean {

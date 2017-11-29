@@ -32,6 +32,7 @@ fun main(args: Array<String>) {
 ```kotlin
 class Empty : Any()
 
+//In Java sono open di default mentre in Kotlin di default sono final
 open class Base {
     open fun overridableMethod() {}
     fun notOverridableMethod() {}
@@ -73,6 +74,7 @@ class Person constructor(name: String) {
     }
 }
 
+//Equivalente di un Singleton in Java
 object Manager {
     fun registerItem(item: String) {}
     val items: Array<String> = arrayOf("item1", "item2")
@@ -211,17 +213,26 @@ private fun getStringValue() : String = "Could be null!"
 private fun getLength(value : String?) = value?.length ?: 0
 ```
 
-## Esempio di *Extension functions*
+## Esempio di *Extension functions* e *Funzioni fuori dalle classi*
 
 ```kotlin
 fun main(args: Array<String>) {
     val value = "value"
 
     println("E' uguale a 'value'? ${value.isEqualToValue()} [$value]")
+
+    val user = User("Francesco", 29)
+    user.isAuthenticated()
+
+    utilityMethod()
 }
 
 fun String?.isEqualToValue() : Boolean {
     return this.equals("value")
+}
+
+fun User.isAuthenticated() : Boolean {
+    return true
 }
 ```
 
