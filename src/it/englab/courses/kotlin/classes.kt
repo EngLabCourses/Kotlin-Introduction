@@ -62,6 +62,17 @@ enum class ProtocolState {
     abstract fun signal(): ProtocolState
 }
 
+/**
+ * Esempio d'uso di una classe "sealed" in sostituzione degli Enum
+ */
+sealed class Response
+
+data class Success(val body : String) : Response()
+
+data class Error(val code : Int, val description : String) : Response()
+
+object Timeout : Response()
+
 fun main(args: Array<String>) {
     Empty()
     Derived()
@@ -82,4 +93,14 @@ fun main(args: Array<String>) {
     val state = ProtocolState.WAITING
     println("current state -> $state")
     println("new state     -> ${state.signal()}")
+
+    analyzeResponse(Error(404, "not found"))
+}
+
+fun analyzeResponse(response : Response) {
+    when(response){
+        is Success -> println(response.body)
+        is Error -> println("${response.code} : ${response.description}")
+        is Timeout -> println("Timeout!")
+    }
 }
