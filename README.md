@@ -317,7 +317,9 @@ fun exampleWithMatching(obj: Any?) {
 ```kotlin
 fun main(args: Array<String>) {
     wrap(::printBlock)
-    println("Risultato ${wrap { ::mathBlock.invoke(5) }}")
+    println("Risultato ${wrap {
+        mathBlock(4)
+    }}")
 }
 
 fun mathBlock(counter: Int) = counter + 1
