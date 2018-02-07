@@ -312,18 +312,24 @@ fun exampleWithMatching(obj: Any?) {
 }
 ```
 
-## Esempio di *High Order Functions* and *Lambda expressions*
+## Esempio di *Function type*, *High Order Functions* and *Lambda expressions*
 
 ```kotlin
 fun main(args: Array<String>) {
+
+    println("is more than five chars? ${isMoreThanFive("loooong!")}")
+
     wrap(::printBlock)
     println("Risultato ${wrap {
         mathBlock(4)
     }}")
 }
 
-fun mathBlock(counter: Int) = counter + 1
+val isMoreThanFive : (String) -> Boolean = {
+    value -> value.length > 5
+}
 
+fun mathBlock(counter: Int) = counter + 1
 fun printBlock() = println("Test Block!")
 
 fun <T> wrap(body: () -> T): T {
