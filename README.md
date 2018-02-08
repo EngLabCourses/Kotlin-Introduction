@@ -244,7 +244,7 @@ data class Pizza(val size: Int,
 
 ```
 
-## Esempio di `?.` (*Safe Call Operator*) e di `?:` (*Elvis Operator*)
+## Esempio di `as?` (safe cast), `?.` (*Safe Call Operator*) e di `?:` (*Elvis Operator*)
 
 ```kotlin
 fun main(args: Array<String>) {
@@ -253,11 +253,16 @@ fun main(args: Array<String>) {
 
     println("String length ${nullableValue!!.length}")
     println("Elvis operator length ${getLength(nullableValue)}")
+
+    val s = "stringa"
+    val number: Int? = s as? Int
+    println("number is $number")
+
 }
 
-private fun getStringValue() : String = "Could be null!"
+private fun getStringValue(): String = "Could be null!"
 
-private fun getLength(value : String?) = value?.length ?: 0
+private fun getLength(value: String?) = value?.length ?: 0
 ```
 
 ## Esempio di *Extension functions* e *Funzioni fuori dalle classi*
