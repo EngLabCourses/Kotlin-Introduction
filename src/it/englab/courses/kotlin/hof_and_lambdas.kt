@@ -19,7 +19,6 @@ val isMoreThanThree : (String, Int) -> Boolean = {
     value, _ -> value.length > 3
 }
 
-
 fun mathBlock(counter: Int) = counter + 1
 fun printBlock() = println("Test Block!")
 
