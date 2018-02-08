@@ -356,7 +356,8 @@ fun exampleWithForAdvanced() {
 ```kotlin
 fun main(args: Array<String>) {
 
-    println("is more than five chars? ${isMoreThanFive("loooong!")}")
+    println("is more than five chars? ${isMoreThanFive("short")}")
+    println("is more than three chars? ${isMoreThanThree("loooong!", 42)}")
 
     wrap(::printBlock)
     println("Risultato ${wrap {
@@ -365,8 +366,13 @@ fun main(args: Array<String>) {
 }
 
 val isMoreThanFive : (String) -> Boolean = {
-    value -> value.length > 5
+    it.length > 5
 }
+
+val isMoreThanThree : (String, Int) -> Boolean = {
+    value, _ -> value.length > 3
+}
+
 
 fun mathBlock(counter: Int) = counter + 1
 fun printBlock() = println("Test Block!")
