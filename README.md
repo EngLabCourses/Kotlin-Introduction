@@ -360,9 +360,11 @@ fun main(args: Array<String>) {
     println("is more than three chars? ${isMoreThanThree("loooong!", 42)}")
 
     wrap(::printBlock)
-    println("Risultato ${wrap {
+
+    val result = wrap {
         mathBlock(4)
-    }}")
+    }
+    println("Risultato $result")
 
 }
 
