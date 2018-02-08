@@ -9,18 +9,19 @@ fun main(args: Array<String>) {
     println("Risultato ${wrap {
         mathBlock(4)
     }}")
+
 }
 
-val isMoreThanFive : (String) -> Boolean = {
+val isMoreThanFive: (String) -> Boolean = {
     it.length > 5
 }
 
-val isMoreThanThree : (String, Int) -> Boolean = {
-    value, _ -> value.length > 3
+val isMoreThanThree: (String, Int) -> Boolean = { value, _ ->
+    value.length > 3
 }
 
-fun mathBlock(counter: Int) = counter + 1
 fun printBlock() = println("Test Block!")
+fun mathBlock(counter: Int) = counter + 1
 
 fun <T> wrap(body: () -> T): T {
     try {
@@ -30,3 +31,5 @@ fun <T> wrap(body: () -> T): T {
         println("Funzione eseguita correttamente")
     }
 }
+
+
