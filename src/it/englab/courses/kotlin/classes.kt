@@ -46,8 +46,10 @@ class Person constructor(name: String) {
 
 //Equivalente di un Singleton in Java
 object Manager {
-    fun registerItem(item: String) {}
-    val items: Array<String> = arrayOf("item1", "item2")
+    fun registerItem(item: String) {
+        items.add(item)
+    }
+    val items: MutableList<String> = mutableListOf("item1", "item2")
 }
 
 enum class ProtocolState {
@@ -84,8 +86,11 @@ fun main(args: Array<String>) {
     Person("Francesco")
     Person("Francesco", "D'Amico")
 
+    println("Items in list ${Manager.items.size}")
     Manager.registerItem("item")
-    Manager.items
+    println("Items in list ${Manager.items.size}")
+    Manager.registerItem("new item")
+    println("Items in list ${Manager.items.size}")
 
     println("enum name ${ProtocolState.TALKING.name}")
     println("enum ordinal ${ProtocolState.TALKING.ordinal}")
