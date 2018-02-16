@@ -18,7 +18,8 @@ val isMoreThanFive: (String) -> Boolean = {
     it.length > 5
 }
 
-val isMoreThanThree: (String, Int) -> Boolean = { value, _ ->
+typealias Predicate = (String, Int) -> Boolean
+val isMoreThanThree: Predicate = { value, _ ->
     value.length > 3
 }
 
