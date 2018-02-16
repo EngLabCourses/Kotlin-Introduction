@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
 }
 
 fun String?.isEqualToValue(): Boolean {
-    return this.equals("value")
+    return equals("value")
 }
 
 fun Int.pow(): Int {
