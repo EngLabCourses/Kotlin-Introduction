@@ -162,21 +162,30 @@ fun main(args: Array<String>) {
 }
 ```
 
-## Esempio di *data class*
+## Esempio di *data class* e inizializzazione con il metodo *apply()*
 
 ```kotlin
-data class User(val name: String, val age: Int, var sex : Char = 'M' )
+data class User(val name: String, val age: Int, var sex: Char = 'M', var job : String = "impiegato")
 
 fun main(args: Array<String>) {
-    val user = User("Francesca", 29)
+    val user = User("Francesca", 27)
     user.sex = 'F'
     println("User $user")
+
+    //si consiglia di inizializzare gli oggetti sempre con il metodo .apply()
+    val newUser = User("Matteo", 30).apply {
+        sex = 'M'
+        job = "student"
+    }
+    println("New User $newUser")
 }
 ```
 
 ## Esempio del metodo `copy()`
 
 ```kotlin
+data class User(val name: String, val age: Int, var sex: Char = 'M', var job : String = "impiegato")
+
 fun main(args: Array<String>) {
     val user = User("Francesca", 27)
     user.sex = 'F'
@@ -190,6 +199,8 @@ fun main(args: Array<String>) {
 ## Uso dei metodi `componentN()`
 
 ```kotlin
+data class User(val name: String, val age: Int, var sex: Char = 'M', var job : String = "impiegato")
+
 fun main(args: Array<String>) {
     val user = User("Francesca", 27)
     user.sex = 'F'
@@ -198,11 +209,17 @@ fun main(args: Array<String>) {
     val clone = user.copy(name = "Francesco", sex = 'M')
     println("New user $clone")
 
-    //esempio - clone.component1()
+    //si consiglia di inizializzare gli oggetti sempre con il metodo .apply()
+    val newUser = User("Matteo", 30).apply {
+        sex = 'M'
+        job = "student"
+    }
+    println("New User $newUser")
 
     val (theName, theAge) = clone
     println("name: $theName")
     println("age : $theAge")
+
 }
 ```
 
@@ -279,7 +296,7 @@ fun main(args: Array<String>) {
 }
 
 fun String?.isEqualToValue(): Boolean {
-    return this.equals("value")
+    return equals("value")
 }
 
 fun Int.pow(): Int {
