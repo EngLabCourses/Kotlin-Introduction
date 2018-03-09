@@ -66,6 +66,8 @@ enum class ProtocolState {
 
 /**
  * Esempio d'uso di una classe "sealed" in sostituzione degli Enum
+ *
+ * esempio alternativo di sealed class -> https://proandroiddev.com/kotlin-sealed-classes-enums-with-swag-d3c4b799bcd4
  */
 sealed class Response
 
@@ -73,7 +75,7 @@ data class Success(val body : String) : Response()
 
 data class Error(val code : Int, val description : String) : Response()
 
-object Timeout : Response()
+object Timeout : Response() //singleton non contenendo dati!
 
 fun main(args: Array<String>) {
     Empty()
